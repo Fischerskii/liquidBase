@@ -14,7 +14,6 @@ import ru.iteco.account.model.exception.CurrencyNotEqualsException;
 import ru.iteco.account.repository.BankBookRepository;
 import ru.iteco.account.repository.StatusRepository;
 import ru.iteco.account.repository.TransactionRepository;
-import ru.iteco.account.repository.UserRepository;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -27,7 +26,6 @@ class TransactionServiceImpl implements TransactionService {
 
     private final BankBookRepository bankBookRepository;
     private final BankBookService bankBookService;
-    private final UserService userService;
     private final StatusRepository statusRepository;
     private final TransactionRepository transactionRepository;
 
@@ -44,7 +42,7 @@ class TransactionServiceImpl implements TransactionService {
 
         TransactionEntity transactionEntity = new TransactionEntity();
         transactionEntity.setSourceBankBook(source);
-        transactionEntity.setTargerBankBook(target);
+        transactionEntity.setTargetBankBook(target);
         transactionEntity.setAmount(amount);
         transactionEntity.setInitiationDate(LocalDateTime.now());
         transactionEntity.setStatus(statusRepository.findByName(Status.PROCESSING.getStatus()));

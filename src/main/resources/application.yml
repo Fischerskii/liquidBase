@@ -2,7 +2,7 @@ spring:
   thymeleaf:
     prefix: classpath:/views/
   datasource:
-    url: jdbc:postgresql://localhost:5432/account
+    url: jdbc:postgresql://localhost:5433/account
     username: account
     password: account
   jpa:

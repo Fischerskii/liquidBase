@@ -27,7 +27,7 @@ public class TransactionEntity {
 
     @OneToOne
     @JoinColumn(name = "target_bank_book_id", nullable = false)
-    private BankBookEntity targerBankBook;
+    private BankBookEntity targetBankBook;
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
